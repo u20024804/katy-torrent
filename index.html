@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/all.css?version=5.2018" />
+    <!-- <script>
+        setTimeout(function() {
+                base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/([&?])wrapper=False/, "$1").replace(/&$/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "") // Fix urls
+            }, 100) // 100ms later, to workaround double js download in chrome
+    </script> -->
+</head>
+
+<style>
+    /* New CSS */
+	
+    html {
+	overflow-y: scroll;
+    }
+    .screen-warning a {
+        color: white;
+	font-weight: bold;
+	text-decoration: underline;
+    }  
+
+    #output video {
+        width: 768px;
+        height: 432px;
+    }
+    body {
+        margin: 0px;
+        background: #EFEFEF;
+        font-size: 14px;
+	height: 100%;
+    }
+    .new_header {
+        width: 100%;
+        position: fixed;
+        height: 50px;
+        background: #FFFFFF;
+        border: solid;
+        border-width: 0px;
+        border-bottom-width: 1px;
+        border-bottom-color: #E5E5E5;
+        z-index: 20;
+    }
+    .menu_top {
+        width: 100%;
+        position: fixed;
+        height: 40px;
+        background: #FFFFFF;
+        border: solid;
+        border-width: 0px;
+        border-bottom-width: 1px;
+        border-bottom-color: #E5E5E5;
+        margin-top: 51px;
+        margin-left: 201px;
+        z-index: 19;
+    }
+    #menu_left {
+        display: block;
+        height: 100%;
+        position: fixed;
+        background: #FFFFFF;
+        margin-top: 51px;
+        border: solid;
+        border-width: 0px;
+        border-right-width: 1px;
+        border-right-color: #E5E5E5;
+        z-index: 20;
+    }
+    .menu_left_table {
+        padding: 20px;
+    }
+    .menu_left_table td {
+        border: solid;
+        border-width: 0px;
+        border-bottom-width: 1px;
+        border-bottom-color: #E5E5E5;
+    }
+        .new_main {
+            position: absolute;
+            margin-left: 201px;
+            width: calc(100% - 201px);
+            height: 100%;
+        }
+    .wrapper {
+        position: relative;
+    }
+    .footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #FFFFFF;
+    }
+    .footer_menu {
+        padding: 20px;
+    }
+    .footer_menu td {
+        border: solid;
+        border-width: 0px;
+        border-bottom-width: 1px;
+        border-bottom-color: #E5E5E5;
+    }
+    .menu_left_list li {
+        list-style-image: url('img/menu-ico3.jpg');
+        padding: 5px;
+        margin-left: -10px;
+    }
+    .menu_left_table a:hover li {
+        color: white;
+        background-color: #424242;
+    }
+    /* Older CSS */
+    
+    @media all and (max-width: 1300px) {
+        .feature_notice {
+            display: none !important;
+        }
+        .feed_icon {
+            display: none !important;
+        }
+        .icon-upload {
+            display: none !important;
+        }
+        .search-bar {
+            width: 300px !important;
+        }
+        .toggle-menu {
+            display: none !important;
+        }
+        #output video {
+            width: 768px;
+            height: 432px;
+        }
+        .player-output {
+            width: 768px;
+            height: 432px !important;
+        }
+        .center {
+            max-width: 768px !important;
+        }
+        .video-information {
+            height: 32px !important;
+        }
+    }
+    @media all and (max-width: 1100px) {
+        .new_main {
+            margin-left: 0px;
+            !important;
+            width: 100%;
+            !important;
+        }
+        .menu_top {
+            margin-left: 0px;
+            !important;
+        }
+        #menu_left {
+            display: none !important;
+        }
+        .feature_notice {
+            display: none !important;
+        }
+        .feed_icon {
+            display: none !important;
+        }
+        .icon-upload {
+            display: none !important;
+        }
+        .search-bar {
+            width: 300px !important;
+        }
+        .toggle-menu {
+            display: none !important;
+        }
+        .video_container {
+            width: 90% !important;
+        }
+        #output video {
+            width: 512px;
+            height: 288px;
+        }
+        .player-output {
+            width: 512px;
+            height: 288px !important;
+        }
+        .center {
+            max-width: 512px !important;
+        }
+        .video-information {
+            height: 32px !important;
+        }
+        .icon-x {
+            margin-top: 7.5px;
+        }
+    }
+    @media all and (max-width: 950px) {
+        .topics-list {
+            margin-left: 0px !important;
+        }
+        .pc-logo {
+            display: none !important;
+        }
+        .mobile-logo {
+            display: block !important;
+        }
+        .new_header {
+            background-color: #C70039 !important;
+            border-bottom-color: #ad0031 !important;
+        }
+        .video_container {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            margin-top: 67.5px !important;
+            width: 100% !important;
+        }
+        .new_main {
+            margin-left: 0px;
+            !important;
+            width: 100%;
+            !important;
+        }
+        .menu_top {
+            display: none !important;
+            margin-left: 0px;
+            !important;
+        }
+        #menu_left {
+            display: none !important;
+        }
+        .search-bar {
+            width: 175px !important;
+        }
+        .search-menu {
+            display: none !important;
+        }
+        .video-information {
+            height: 32px !important;
+        }
+        .screen-warning {
+            height: 48px !important;
+        }
+        .center {
+            max-width: 320px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        #output video {
+            width: 320px;
+            height: 180px;
+        }
+        .player-output {
+            width: 320px;
+            height: 180px !important;
+        }
+        .icon-x {
+            margin-top: 7.5px;
+        }
+    }
+    input[type="file"] {
+        display: none;
+    }
+
+/* Table */
+	.tg  {
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-color:#d8d8d8;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;background-color:#e8e8e8}
+	.tg .tg-yw4l{vertical-align:top}
+</style>
+
+<body>
+
+    <!-- editbar -->
+    <div class="editbg"></div>
+    <div class="editbar bottombar">
+        <ul class="markdown-help">
+            <li># H1</li>
+            <li>## H2</li>
+            <li>### H3</li>
+            <li><i>_italic_</i>
+            </li>
+            <li><b>**bold**</b>
+            </li>
+            <li>~~<s>strikethrough</s>~~</li>
+            <li>- Lists</li>
+            <li>1. Numbered lists</li>
+            <li>[Links](http://www.zeronet.io)</li>
+            <li>[References][1]
+                <br>[1]: Can be used</li>
+            <li>![image alt](img/logo.png)</li>
+            <li>Inline <code>`code`</code>
+            </li>
+            <li><code>```python<br>print "Code block"<br>```</code>
+            </li>
+            <li>&gt; Quotes</li>
+            <li>--- Horizontal rule</li>
+        </ul>
+        <a href="#Markdown+help" class="icon-help">?</a> Editing: <span class="object">Post:21.body</span> <a href="#Save" class="button save">Save</a> <a href="#Delete" class="button button-delete button-outline delete">Delete</a> <a href="#Cancel" class="cancel">Cancel</a>
+    </div>
+    <!-- EOF editbar -->
+
+    <!-- Head with menu links -->
+    <div class="new_header">
+
+        <a href="#" onclick="showhide()">
+            <img src="img/menu.png" style="opacity: 0.4; height: 12.5px; float: left; margin-top: 19px; margin-left: 25px">
+        </a>
+
+        <img class="mobile-logo" src="img/Cat_mobile_new.png" style="display: none; height: 35px; float: left; margin-top: 10px; margin-left: 10px; margin-right: 10px"></img>
+       
+        <img class="pc-logo" src="img/logo.png" style="height: 35px; float: left; margin-top: 7.5px; margin-left: 10px"></img>
+        
+
+        <div style="float: left; margin-top: 10px; margin-left: 15px; opacity: 0.5">
+            <label for="uploader"><img src="img/new-file.png" height="30px" style="cursor: pointer"></img>
+            </label>
+            <input id="uploader" type="file" name="upload" multiple />
+        </div>
+		
+		<div style="float: left; margin-top: 10px; margin-left: 15px; opacity: 0.5">
+		<img style="cursor: pointer" src="img/magnet-icon.png" height="30px"></img>
+		</div>
+		
+		<div style="float: left; margin-top: 10px; margin-left: 15px; opacity: 0.5">
+		<img style="cursor: pointer" src="img/remove-icon.png" height="30px"></img>
+		</div>
+
+    </div>
+
+    <div id="menu_left">
+        <table border="0" class="menu_left_table" width="200">
+            <tbody>
+                <tr>
+                    <td>v0.2.0 BETA</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="menu_left_list" style="margin-left: 5px">
+                            <ul>
+				<li>All (<span id="torrent_counter">0</span>)</li>
+                                <li>Downloading (0)</li>
+                                <li>Completed (0)</li>
+                                <li>Active (0)</li>
+                                <li>Inactive (0)</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Head -->
+
+    <!-- EOF Head -->
+
+    <div class="new_main" id="new_main">
+        <div class="wrapper">
+
+            <div class="message-big">Initial sync in progress...</div>
+
+            <!-- Page: Main -->
+            <div class="video_container" style="margin-left: 5px; margin-top: 60px; width: 100%">
+
+                <!-- New Topic -->
+
+
+                <div class="upload-container" style="background-color: #ffffff; margin-bottom: 10px; margin-top: -4px">
+
+                    <div style="margin: 10px; padding: 20px">
+                        <!-- Uploader app -->
+
+<div id="progressBar"></div>
+
+<table class="tg" id="torrent_table">
+  <tr>
+    <th class="tg-yw4l">Name</th>
+    <th class="tg-yw4l">Peers</th>
+    <th class="tg-yw4l">Downloaded</th>
+    <th class="tg-yw4l">Remaining</th>
+    <th class="tg-yw4l">Down Speed</th>
+    <th class="tg-yw4l">Up Speed</th>
+	<th class="tg-yw4l">Magnet Link</th>
+  </tr>
+
+<tbody id="torrent_list">
+<td id="tor_loading_span" style="display: block">
+<span>Loading...</span><span id="loading_span_value">0</span>
+</td>
+</tbody>
+
+</table>
+
+                    </div>
+                </div>
+
+
+<!-- Bottom Div -->
+
+                <div class="new-topic" style="background-color: #ffffff; margin-bottom: 10px; margin-top: -4px">
+                    <div style="margin: 10px; padding: 20px">
+
+					
+					    <div class="statsbar" id="statsbar" style="margin-top: 5px; margin-left: 5px">
+
+
+<form><label for="torrentId">Open torrent address: </label><input name="torrentId" placeholder="magnet:" required><button class = "btn btn-primary" type="submit">Download</button></form>
+
+                        <div id="status">
+                            <div style="color: #6d6d6d">
+                                <b>Down:</b> <span id="downloadSpeed">0 b/s</span> <b>Up:</b> <span id="uploadSpeed">0 b/s</span> <b>Peers:</b> <span class="show-leech"></span> <span class="show-seed"></span> <span id="numPeers">0</span> <b>Total:</b> <span id="downloaded">0</span> / <span id="total"></span> <span id="remaining">0</span>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+					
+					</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Template: menu -->
+        <div class="menu template">
+            <a href="#" class="menu-item template">Template</a>
+        </div>
+        <!-- EOF Template: menu -->
+
+        <script src="js/katy-torrent.js"></script>
+
+        <!-- <script>
+            function showhideMessage() {
+                document.getElementById('warning-message').style.display = 'none';
+            }
+
+            $(".head .more a").each(function(i, elem) {
+                $(elem).attr("href", Text.fixLink($(elem).attr("href")))
+            });
+
+            function showhideMagnetMessage() {
+                document.getElementById('magnet-message').style.display = 'none';
+            }
+
+            function showhideKittifyMessage() {
+                document.getElementById('kittify-message').style.display = 'none';
+            }
+
+
+            $(".head .more a").each(function(i, elem) {
+                $(elem).attr("href", Text.fixLink($(elem).attr("href")))
+            });
+        </script> -->
+
+</body>
+
+</html>

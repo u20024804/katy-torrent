@@ -1,0 +1,38 @@
+{
+  "name": "katy-torrent",
+  "version": "0.2.0",
+  "description": "A super-lighweight webtorrent desktop client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "kopy-kate",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "create-torrent": "^3.24.5",
+    "debug": "3.0.1",
+    "jquery": "1.11.1",
+    "listify": "1.0.0",
+    "moment": "2.18.1",
+    "nedb": "^1.8.0",
+    "path": "0.12.7",
+    "simple-get": "2.7.0",
+    "throttleit": "1.0.0",
+    "thunky": "1.0.2",
+    "upload-element": "1.0.1",
+    "webtorrent": "0.x",
+    "xhr": "2.4.0",
+    "nedb": "1.8.0"
+  },
+  "devDependencies": {
+    "electron": "~1.6.2"
+  }
+}
