@@ -1,6 +1,8 @@
 # katy-torrent v0.2.0
 ## (ALPHA -- Under construction!)
 ![alt text](https://www.kittyseedbox.tk/img/screenshot-kopykate-2.png)
+## Introduction
+Katy-torrent is a light-weight WebTorrent client designed for long-term seeding of a large amount of torrent files.
 ## Installation instructions
 (Make sure you have Node.js and NPM installed!)
 1. cd to project folder
