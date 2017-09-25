@@ -1,4 +1,5 @@
 # katy-torrent v0.2.0
+## (ALPHA -- Under construction!)
 ![alt text](https://www.kittyseedbox.tk/img/screenshot-kopykate-2.png)
 ## Installation instructions
 (Make sure you have Node.js and NPM installed!)
